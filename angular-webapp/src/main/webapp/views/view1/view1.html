@@ -1,0 +1,48 @@
+<div class="well">
+ <h2>Incluir cliente {{cliente.nome}}</h2>
+  <form>
+      <div class="form-group">	
+          <label>Nome</label>
+          <input class="form-control" type="text" ng-model="cliente.nome" ng-trim="true"/>
+      </div>
+      <div class="form-group">
+          <label>CPF</label>
+          <input class="form-control" type="text" ng-model="cliente.cpf"/>
+      </div>
+      <div class="form-group">
+          <label>Email</label>
+          <input class="form-control" type="text" ng-model="cliente.email"/>
+      </div>
+
+      <div class="container">
+          <h2>Dados</h2>
+          <div class="form-group">
+            <label>Nome</label>
+              <input class="form-control" type="text" ng-model="filtroNome" />
+          </div>
+      </div>
+
+      <div class="container resultado">      
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Idade</th>
+              <th>Salario</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="resposta in respostas | filter : filtroNome">
+              <td>{{resposta.nome}}</td>
+              <td>{{resposta.idade}}</td>
+              <td>{{resposta.salario|currency:'R$'}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+     <input class="btn btn-primary" type="button" value="Salvar" ng-click="salvar();" />
+     <input class="btn btn-primary" type="button" value="Abrir Modal" ng-click="abrirModal();" />
+     <button class="btn btn-success" onclick="window.location.href='javascript:window.history.go(-1)'">Voltar</button>
+  </form>
+</div>
