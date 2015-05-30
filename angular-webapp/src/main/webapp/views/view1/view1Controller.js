@@ -22,6 +22,14 @@ angular.module('app.view1', ['ngRoute'])
         });
     }
 
+    $scope.funcao = function(param, callback){
+        console.info('dento da funcao');
+
+        param += " alterado";
+
+        callback(param);
+    };
+
     $scope.respostas = [
         { nome: 'Guilherme'  , idade : 20, salario: 1000 },
         { nome: 'Guilherme 2', idade : 21, salario: 2000 },
@@ -34,5 +42,10 @@ angular.module('app.view1', ['ngRoute'])
 
     $scope.salvar = function() {
         console.info($scope.cliente);
+
+        $scope.funcao('parametro', function(resposta){
+            console.info('executando callback');
+            console.info(resposta);
+        });
     }
 }]);
