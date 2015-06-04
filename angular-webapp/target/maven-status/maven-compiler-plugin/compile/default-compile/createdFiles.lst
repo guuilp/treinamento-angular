@@ -1,0 +1,4 @@
+com\angular\web\rest\ExampleRS.class
+com\angular\web\rest\ClienteRS.class
+com\angular\web\config\RestApplication.class
+com\angular\web\config\ConfigListener.class

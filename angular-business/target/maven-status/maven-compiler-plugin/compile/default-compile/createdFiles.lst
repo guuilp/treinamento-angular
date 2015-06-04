@@ -1,0 +1,6 @@
+com\application\business\service\AbstractService.class
+com\application\business\service\ClienteService.class
+com\application\business\jpa\EntityManagerFactoryWrapper$1.class
+com\application\business\domain\Entidade.class
+com\application\business\jpa\EntityManagerFactoryWrapper.class
+com\application\business\domain\Cliente.class

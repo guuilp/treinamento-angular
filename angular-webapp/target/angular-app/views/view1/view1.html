@@ -1,0 +1,53 @@
+<div class="well">
+  <div>
+    <input class="btn btn-primary" type="button" value="Abrir Modal" ng-click="abrirModal();" />
+    <input class="btn btn-success" type="button" value="Incluir" ng-click="inclusao = true" />
+  </div>
+
+  <div ng-show="inclusao">
+    <h2>Incluir cliente {{cliente.nome}}</h2>
+    <div class="form-group">	
+        <label>Nome</label>
+        <input class="form-control" type="text" ng-model="cliente.nome" ng-trim="true"/>
+    </div>
+    <div class="form-group">
+        <label>CPF</label>
+        <input class="form-control" type="text" ng-model="cliente.cpf"/>
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input class="form-control" type="text" ng-model="cliente.email"/>
+    </div>
+    <input class="btn btn-primary" type="button" value="Salvar" ng-click="salvar(); inclusao = false" />
+  </div>
+
+  <div class="container">
+      <h2>Dados</h2>
+      <div class="form-group">
+        <label>Nome</label>
+          <input class="form-control" type="text" ng-model="filtroNome" />
+      </div>
+  </div>
+
+  <div class="container resultado">      
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>CPF</th>
+          <th>E-mail</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="resposta in respostas | filter : filtroNome">
+          <td>{{resposta.nome}}</td>
+          <td>{{resposta.cpf}}</td>
+          <td>{{resposta.email}}</td>
+          <td><button class="btn btn-danger" ng-click="deletar(resposta.id)">Deletar</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <button class="btn btn-success" onclick="window.location.href='javascript:window.history.go(-1)'">Voltar</button>
+</div>

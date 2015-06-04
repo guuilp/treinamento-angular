@@ -12,6 +12,7 @@
 
 	<modules>
 		<module>angular-webapp</module>
+		<module>angular-business</module>
 	</modules>
 
 	<repositories>
@@ -199,6 +200,11 @@
 				<groupId>org.apache.commons</groupId>
 				<artifactId>commons-lang3</artifactId>
 				<version>3.3.2</version>
+			</dependency>
+			<dependency>
+				<groupId>io.reactivex</groupId>
+				<artifactId>rxjava</artifactId>
+				<version>1.0.4</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
